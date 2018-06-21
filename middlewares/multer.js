@@ -1,8 +1,10 @@
 const multer = require('multer');
+const webp = require('webp-converter');
+const path = require('path');
 const storage = multer.diskStorage({
     destination:'./public/images',
     filename(req, file, cb){
-      cb(null,`${file.fieldname}-${Date.now()}`)
+      cb(null,`${file.fieldname}-${Date.now()}${path.extname(file.originalname)}`)
     }
   });
   const upload = multer({
@@ -20,7 +22,7 @@ const storage = multer.diskStorage({
     if(checkMimeType){
       return cb(null,true)
     }else{
-      cb("Error:Only jpg images are allowed")
+      cb("Error:Only jpg images are allowed.")
     }
   }
 

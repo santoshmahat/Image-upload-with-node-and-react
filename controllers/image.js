@@ -4,8 +4,11 @@ module.exports = {
     upload(req, res, err =>{
       if(err){
         return res.json({status:'fail',msg:err})
+      }else if(req.file==undefined){
+          return res.json({status:'fail',msg:"You must select a image."})
       }else{
-        return res.json({status:'success',msg:"Image have been save successfully"})
+        console.log("req.file",req.file);
+        return res.json({status:'success',msg:"Image have been save successfully."})
       }
     })
   }

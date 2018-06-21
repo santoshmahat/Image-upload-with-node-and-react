@@ -5,13 +5,15 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "node index.js"
+    "server": "nodemon index.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
-    "multer": "^1.3.0"
+    "multer": "^1.3.0",
+    "nodemon": "^1.17.5",
+    "webp-converter": "^2.1.6"
   }
 }
