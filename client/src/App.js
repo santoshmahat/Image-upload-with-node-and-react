@@ -28,7 +28,10 @@ class App extends Component {
     const request = axios({
       method:'post',
       url:'/images',
-      data:data
+      data:data,
+      headers:{
+        "x-custom-header":this.state.fields.image.name
+      }
     })
     request.then(result => {
       console.log("result",result);
@@ -41,6 +44,7 @@ class App extends Component {
   }
 
   render() {
+    console.log("this.state.fields.image",this.state);
     return (
       <div className="App">
         <header className="App-header">
